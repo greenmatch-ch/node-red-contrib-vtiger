@@ -1,0 +1,24 @@
+{
+  "name": "node-red-contrib-vtiger",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "mkdir -p dist && cp src/*.html dist && tsc -p src/"
+  },
+  "author": "Jan Dietrich",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "vtiger": "dist/vtiger.js"
+    }
+  },
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.6"
+  }
+}

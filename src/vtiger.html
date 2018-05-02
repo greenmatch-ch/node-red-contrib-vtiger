@@ -1,0 +1,114 @@
+<script type="text/javascript">
+    RED.nodes.registerType('vtiger-server',{
+        category: 'config',
+        defaults: {
+            host: { value: "text" },
+            user: { value: "text" },
+        },
+        credentials: {
+            sessionId: { type: "text" },
+            key: { type: "text"},
+        },
+        label: function() {
+            return this.user + "@" + this.host;
+        }
+    });
+</script>
+<script type="text/x-red" data-template-name="vtiger-server">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="icon-bookmark"></i> Host</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-user"><i class="icon-bookmark"></i> User</label>
+        <input type="text" id="node-config-input-user">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-key"><i class="icon-bookmark"></i> Key</label>
+        <input type="password" id="node-config-input-key">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('vtiger-post',{
+        category: 'vtiger',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type: "vtiger-server"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Vtiger Update";
+        }
+    });
+</script>
+<script type="text/x-red" data-template-name="vtiger-post">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Vtiger Server">
+    </div>
+</script>
+<script type="text/x-red" data-help-name="vtiger-post">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('vtiger-get',{
+        category: 'vtiger',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type: "vtiger-server"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Vtiger Get Contact";
+        }
+    });
+</script>
+<script type="text/x-red" data-template-name="vtiger-get">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Vtiger Server">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('vtiger-test',{
+        category: 'vtiger',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type: "vtiger-server"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Vtiger Test";
+        }
+    });
+</script>
+<script type="text/x-red" data-template-name="vtiger-test">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Vtiger Server">
+    </div>
+</script>
